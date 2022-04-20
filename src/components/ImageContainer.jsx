@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 const ImageDiv = styled.div`
-    width: 35%;
+    margin: 2%;
+    width: 28%;
 `
 const SizedImage = styled.img`
     width:100%;

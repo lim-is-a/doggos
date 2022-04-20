@@ -3,8 +3,10 @@ import Title from './components/Title'
 import ImageContainer from './components/ImageContainer'
 import Button from './components/Button'
 import styled from 'styled-components'
+import DogsListContainer from './components/DogsListContainer'
 
 const MainContainer = styled.div`
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +47,7 @@ function App() {
   return (
     <MainContainer>
        <Title name="Doggo"/> 
-       <ImageContainer url={url} breed={breed}/>
+       <DogsListContainer url={url} breed={breed}/>
        <Button onClick={handleclick}/>
     </MainContainer>
   );
