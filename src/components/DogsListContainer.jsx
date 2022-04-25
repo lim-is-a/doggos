@@ -5,18 +5,19 @@ const DogsListDiv = styled.div`
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+    padding-bottom: 60px
     // justify-content: center;
 `
 
-const DogsListContainer = ({url, breed}) => {
+const DogsListContainer = ({urls, breed}) => {
     return (
         <DogsListDiv>
-            <ImageContainer url={url} breed={breed}/>
-            <ImageContainer url={url} breed={breed}/>
-           <ImageContainer url={url} breed={breed}/>
-           <ImageContainer url={url} breed={breed}/>
-           <ImageContainer url={url} breed={breed}/>
-           <ImageContainer url={url} breed={breed}/>
+            {
+                urls.map((url, i) =>{
+                    return(<ImageContainer key={i} url={url} breed={breed[i]}/>)
+                })
+            }
+            {/* {console.log(urls)} */}
         </DogsListDiv>
     );
 }
