@@ -38,20 +38,24 @@ const apiFunction = (setBreed, setUrls) => {
   .catch((err) => console.error(err))
 }
 
+
 function App() {
 
   const [urls, setUrls] = useState(["https://cdn.fotofits.com/petzlover/gallery/img/l/belgian-shepherd-dog-malinois-740243.jpeg", "https://www.pupvine.com/wp-content/uploads/2021/08/Black-Belgian-Malinois.jpeg", "https://i.pinimg.com/474x/01/ff/0e/01ff0e890bb2af8f2a3b6a4d0ceb35b8--black-belgian-malinois-belgium-malinois.jpg"])
   const [breed, setBreed] = useState(["Black Malinois Shepherd Puppy", "Black Belgian Malinois" , "Black Belgian Malinois"])
-
+  const [count, setCount] = useState(3);
+  
   const handleclick = () => {
-    apiFunction(setBreed, setUrls)
+    apiFunction(setBreed, setUrls);
+    setCount(count + 3);
   }
-
+  
   return (
     <MainContainer>
        <Title name="Doggo"/> 
        <DogsListContainer urls={urls} breed={breed}/>
        <Button onClick={handleclick}/>
+       <div>This page has served up { count } doggo images today.</div>
     </MainContainer>
   );
 }
